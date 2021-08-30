@@ -1,0 +1,337 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4C96194C-31D2-4780-80BB-FE77F75FAFD0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>VirtualMotionCaptureControlPanel</RootNamespace>
+    <AssemblyName>VirtualMotionCaptureControlPanel</AssemblyName>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\ControlPanel\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;FANBOX;BETA</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\ControlPanel\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\VirtualMotionCapture_dark.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'FANBOX|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\FANBOX\ControlPanel\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;FANBOX</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'FREE|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\FREE\ControlPanel\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;FREE</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'BETA|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\BETA\ControlPanel\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;FANBOX;BETA</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="ColorPickerWindow.xaml.cs">
+      <DependentUpon>ColorPickerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DebugLogWindow.xaml.cs">
+      <DependentUpon>DebugLogWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EyeTracking_ViveProEyeSettingWindow.xaml.cs">
+      <DependentUpon>EyeTracking_ViveProEyeSettingWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EyeTracking_TobiiSettingWindow.xaml.cs">
+      <DependentUpon>EyeTracking_TobiiSettingWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FunctionKeyAddWindow.xaml.cs">
+      <DependentUpon>FunctionKeyAddWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FaceControlKeyAddWindow.xaml.cs">
+      <DependentUpon>FaceControlKeyAddWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Globals.cs" />
+    <Compile Include="GraphicsOptionWindow.xaml.cs">
+      <DependentUpon>GraphicsOptionWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HandFreeOffsetWindow.xaml.cs">
+      <DependentUpon>HandFreeOffsetWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="HandGestureControlKeyAddWindow.xaml.cs">
+      <DependentUpon>HandGestureControlKeyAddWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="JsonSerializer.cs" />
+    <Compile Include="LanguageSelector.cs" />
+    <Compile Include="LipTracking_ViveSettingWindow.xaml.cs">
+      <DependentUpon>LipTracking_ViveSettingWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MidiCCBlendShapeSettingWIndow.xaml.cs">
+      <DependentUpon>MidiCCBlendShapeSettingWIndow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ModSetting.xaml.cs">
+      <DependentUpon>ModSetting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PhotoWindow.xaml.cs">
+      <DependentUpon>PhotoWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SettingWindow.xaml.cs">
+      <DependentUpon>SettingWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShortcutKeyWindow.xaml.cs">
+      <DependentUpon>ShortcutKeyWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TrackerConfigWindow.xaml.cs">
+      <DependentUpon>TrackerConfigWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModelBase.cs" />
+    <Compile Include="VRMImportWindow.xaml.cs">
+      <DependentUpon>VRMImportWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VRoidHubWindow.xaml.cs">
+      <DependentUpon>VRoidHubWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DMMVRConnectWindow.xaml.cs">
+      <DependentUpon>DMMVRConnectWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="CalibrationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ColorPickerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DebugLogWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EyeTracking_ViveProEyeSettingWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="EyeTracking_TobiiSettingWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FunctionKeyAddWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FaceControlKeyAddWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GraphicsOptionWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HandFreeOffsetWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="HandGestureControlKeyAddWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LipTracking_ViveSettingWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CalibrationWindow.xaml.cs">
+      <DependentUpon>CalibrationWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="MidiCCBlendShapeSettingWIndow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ModSetting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PhotoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Chinese.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Japanese.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\English.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Korean.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="SettingWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ShortcutKeyWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TrackerConfigWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VRMImportWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VRoidHubWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DMMVRConnectWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ColorPickerWPF\akr.WPF.Controls.ColorPicker\akr.WPF.Controls.ColorPicker.csproj">
+      <Project>{214ebe94-3ac3-4260-8664-35d803139e89}</Project>
+      <Name>akr.WPF.Controls.ColorPicker</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\UnityMemoryMappedFile\UnityMemoryMappedFile.csproj">
+      <Project>{045efc7f-9cf6-4dce-83e1-3cac35d83383}</Project>
+      <Name>UnityMemoryMappedFile</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VirtualMotionCapture.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\VirtualMotionCapture_dark.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>if not exist "$(ProjectDir)VRoidHubWindow.xaml" echo ^&lt;Window x:Class="VirtualMotionCaptureControlPanel.VRoidHubWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" /^&gt; &gt; "$(ProjectDir)VRoidHubWindow.xaml"
+if not exist "$(ProjectDir)VRoidHubWindow.xaml.cs" echo namespace VirtualMotionCaptureControlPanel { public partial class VRoidHubWindow : System.Windows.Window {public static bool IncludeVRoidHubWindow = false;} } &gt; "$(ProjectDir)VRoidHubWindow.xaml.cs"
+if not exist "$(ProjectDir)DMMVRConnectWindow.xaml" echo ^&lt;Window x:Class="VirtualMotionCaptureControlPanel.DMMVRConnectWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" /^&gt; &gt; "$(ProjectDir)DMMVRConnectWindow.xaml"
+if not exist "$(ProjectDir)DMMVRConnectWindow.xaml.cs" echo namespace VirtualMotionCaptureControlPanel { public partial class DMMVRConnectWindow : System.Windows.Window {public static bool IncludeDMMVRConnectWindow = false;} } &gt; "$(ProjectDir)DMMVRConnectWindow.xaml.cs"
+cd "$(TargetDir)..\"
+del /s /q *.*
+</PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /I /D /Y /E "$(SolutionDir)\..\UnityBuild" "$(TargetDir).."
+xcopy /I /D /Y /E "$(SolutionDir)\..\BuildRootFiles" "$(TargetDir).."
+cd "$(TargetDir)"
+del /s /q *.pdb
+cd ..
+del /s /q .gitignore</PostBuildEvent>
+  </PropertyGroup>
+</Project>
