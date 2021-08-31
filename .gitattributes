@@ -1,2 +1,10 @@
 HighQualityTrainedModel.nn filter=lfs diff=lfs merge=lfs -text
 sharedassets0.assets filter=lfs diff=lfs merge=lfs -text
+head_cavity_map.uasset filter=lfs diff=lfs merge=lfs -text
+head_normal_map.uasset filter=lfs diff=lfs merge=lfs -text
+head_wm*_normal_map.uasset filter=lfs diff=lfs merge=lfs -text
+Trey_FaceMesh.uasset filter=lfs diff=lfs merge=lfs -text
+head_cavity_map.tga filter=lfs diff=lfs merge=lfs -text
+head_normal_map.tga filter=lfs diff=lfs merge=lfs -text
+head_wm*_normal_map.tga filter=lfs diff=lfs merge=lfs -text
+Face_Archetype.uasset filter=lfs diff=lfs merge=lfs -text
